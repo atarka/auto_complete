@@ -1,15 +1,17 @@
 **What is the difference between Component and PureComponent? 
 Give an example where it might break my app.**
+
 PureComponent implements its own version of shouldComponentUpdate,
 re-rendering the component only when state or props change.
 To guess if things've changed it does a shallow comparison. 
-This saves resourses wasted on unnecessary re-renders, but also can
+This saves resources wasted on unnecessary re-renders, but also can
 break an app if shallow check fails to provide intended results - 
 deep changes inside objects that are not detected by a shallow 
 comparison or using anonymous functions as props.
 
 **Context + ShouldComponentUpdate might be dangerous. Can think of
 why is that?**
+
 Sadly no.
 
 **Describe 3 ways to pass information from a component to its PARENT.**
@@ -22,6 +24,7 @@ using passed down context.
 
 **What is a fragment and why do we need it? Give an example where it
 might break my app.**
+
 Fragment is used to return multiple elements instead of a single node.
 Not aware of its caveats sadly.
 
@@ -32,11 +35,13 @@ Not aware of its caveats sadly.
 
 **what's the difference in handling exceptions in promises, callbacks and
   async...await.**
+
 You go for chained catch in case of promises, you set a try .. catch 
 for your await calls and you try .. catch errors locally with 
 callbacks
 
 **How many arguments does setState take and why is it async.**
+
 Two arguments, second one is a callback fired upon completion of a 
 state modification. Being async setState can batch all the changes
 from multiple function call and prevent unnecessary re-renders.
@@ -56,6 +61,7 @@ glorified render function
 3. Direct styling with style tag using style.objects
 
 **How to render an HTML string coming from the server.**
+
 dangerouslySetInnerHTML is the direct way. One can always try to 
 parse and transform HTML string into sane and appropriate 
 component tree but this path is full of sorrow and surprises. 
