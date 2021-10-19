@@ -1,0 +1,99 @@
+$grey: #888888;
+$red: #dd0000;
+$white: #ffffff;
+
+.sample-app {
+  font-size: 18px;
+
+  p {
+    margin: 0 0 8px;
+  }
+
+  .sample-input {
+    margin-bottom: 30px;
+  }
+
+  .description {
+    margin-top: 10px;
+    color: $grey;
+    font-size: 75%;
+  }
+}
+
+.field-input-autocomplete {
+  input {
+    border-radius: 2px;
+    padding: 4px 6px;
+    border: 1px solid black;
+  }
+
+  .loading-spinner {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    margin-left: 4px;
+
+    div {
+      position: absolute;
+      border: 2px solid $grey;
+      opacity: 1;
+      border-radius: 50%;
+      animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
+
+    div:nth-child(2) {
+      animation-delay: -0.5s;
+    }
+
+    @keyframes lds-ripple {
+      0% {
+        top: 10px;
+        left: 10px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+      }
+      100% {
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        opacity: 0;
+      }
+    }
+  }
+
+  .suggestion-items {
+    position: absolute;
+    border: 1px solid $grey;
+    background-color: white;
+    margin-top: -1px;
+    max-height: 100px;
+    overflow-y: auto;
+
+    &.empty {
+      padding: 4px 8px;
+      font-size: 80%;
+    }
+
+    .suggestion-item {
+      display: block;
+      padding: 4px 8px;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s;
+
+      > span {
+        border-bottom: 2px solid $red;
+      }
+
+      &:hover, &.active {
+        color: $white;
+        background-color: $red;
+        > span {
+          border-bottom: 2px solid white;
+        }
+      }
+    }
+  }
+}

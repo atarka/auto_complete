@@ -1,0 +1,15 @@
+/.yarn/*
+!/.yarn/releases
+!/.yarn/plugins
+!/.yarn/sdks
+!/.yarn/versions
+/dist/
+/config.json
+/coverage
+/node_modules
+/public/js/bundle.js
+/yarn-error.log
+.module-cache
+.history
+.DS_Store
+.idea
